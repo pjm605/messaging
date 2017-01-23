@@ -1,0 +1,23 @@
+<section id="home">
+
+	<form>
+		<div class="field half first">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name"/>
+		</div>
+		<div class="field half">
+			<label for="email">Email/Phone</label>
+			<input type="text" name="email" id="email" ng-model="message.phone_or_email"/>
+		</div>
+		<div class="field">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" rows="4" ng-model="message.message"></textarea>
+		</div>
+		<ul class="actions">
+			<li><input type="submit" value="Send Message" class="special" ng-click="sendMessage(message)"/></li>
+		</ul>
+	</form>
+
+</section>
+
+<a ui-sref="display({id: 1})"> go to display</a>

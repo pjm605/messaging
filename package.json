@@ -1,0 +1,29 @@
+{
+  "name": "winit",
+  "version": "1.0.0",
+  "description": "built with Node.js, Express, AngularJS.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "composable-middleware": "^0.3.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "faker": "^3.1.0",
+    "jquery": "^3.1.1",
+    "pg": "^6.1.2",
+    "sequelize": "^3.29.0",
+    "ui-router": "^1.0.0-alpha.3",
+    "volleyball": "^1.4.1"
+  },
+  "devDependencies": {}
+}
