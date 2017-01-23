@@ -6,11 +6,17 @@ app.controller('homeCtrl', function ($scope, $state, $log, homefactory) {
 	 	$scope.testing = res[0].message
 	 })
 
+
 	 $scope.sendMessage = function (message) {
 	 	homefactory.addMessage(message)
+	 	.then(function (added) {
+	 		console.log(added)
+	 		homefactory.sendMessage(added)
+	 	})
 	 	.then(function () {
 	 		$state.reload();
 	 	})
 	 	.catch($log.error)
 	 }
+
 })

@@ -1,6 +1,7 @@
 'use strict';
 
 app.factory('homefactory', function ($http){
+
 	return {
 		getMessage: function () {
 			return $http.get('/api/message')
@@ -10,6 +11,12 @@ app.factory('homefactory', function ($http){
 		},
 		addMessage: function (message){
 			return $http.post('/api/message', message)
+			.then(function (res) {
+				return res.data
+			})
+		},
+		sendMessage: function (data) {
+			return $http.get('/api/twilio/' + data.phone_or_email + '/' + data.id)
 			.then(function (res) {
 				return res.data
 			})
