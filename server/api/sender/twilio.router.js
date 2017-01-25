@@ -28,6 +28,12 @@ router.get('/:num/:id', function (req, res) {
 		to : req.params.num,
 		from : twilio_from_number,
 		body : link
+	}, function (err, message) {
+		if (err) {
+			console.log("error:", err);
+		} else {
+			res.sendStatus(200);
+		}
 	});
 
 })

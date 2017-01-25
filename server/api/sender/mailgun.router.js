@@ -31,7 +31,7 @@ router.get('/:to/:id', function (req, res) {
 			console.log("error:", err)
 		}
 		else {
-			console.log(body);
+			res.sendStatus(200)
 		}
 	});
 })
