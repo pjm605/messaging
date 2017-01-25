@@ -3,11 +3,16 @@ var router = require('express').Router();
 
 var dnssync = require('dns-sync');
 var os = require('os');
+var validator = require('validator');
 
-var sid = process.env.TWILIO_SID
-var auth_token = process.env.TWILIO_AUTH_TOKEN
-var from_number = process.env.TWILIO_FROM_NUMBER
-var client = twilio(sid, auth_token);
+// read the twilio and mailgun settings from the environment variables
+var twilio_sid = process.env.TWILIO_SID;
+var twilio_auth_token = process.env.TWILIO_AUTH_TOKEN;
+var twilio_from_number = process.env.TWILIO_FROM_NUMBER;
+
+// create a twilio client with settings in environment variables
+// I chose to store the keys in the environment variables (safer!!), please ask for actual values
+var client = twilio(twilio_sid, twilio_auth_token);
 
 router.get('/:num/:id', function (req, res) {
 
@@ -21,7 +26,7 @@ router.get('/:num/:id', function (req, res) {
 	console.log("sendTwilioMessage to:", req.params.num, " msg:", req.params.id, " hostname:"+serverName)
 	var resp = client.messages.create({
 		to : req.params.num,
-		from : from_number,
+		from : twilio_from_number,
 		body : link
 	});
 

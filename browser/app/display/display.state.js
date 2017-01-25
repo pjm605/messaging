@@ -6,6 +6,7 @@ app.config(function ($stateProvider) {
     templateUrl: '/browser/app/display/display.html',
     controller:'displayCtrl',
     resolve: {
+        // resolve the matching message id
     	message: function (displayfactory, $stateParams) {
     		return displayfactory.getMessageById($stateParams.id);
     	}

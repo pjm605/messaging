@@ -5,9 +5,11 @@ var Sequelize = require('sequelize');
 var db = require('../../db');
 
 var message = db.define('message', {
-  phone_or_email: {
-    type: Sequelize.STRING,
-    allowNull: false,
+  email: {
+    type: Sequelize.STRING
+  },
+  phone: {
+  	type: Sequelize.STRING
   },
   message: Sequelize.STRING
 });

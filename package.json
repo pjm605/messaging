@@ -22,12 +22,14 @@
     "faker": "^3.1.0",
     "install": "^0.8.4",
     "jquery": "^3.1.1",
+    "mailgun-js": "^0.8.0",
     "npm": "^4.1.1",
     "pg": "^6.1.2",
     "process": "^0.11.9",
     "sequelize": "^3.29.0",
     "twilio": "^2.11.1",
     "ui-router": "^1.0.0-alpha.3",
+    "validator": "^6.2.1",
     "volleyball": "^1.4.1"
   },
   "devDependencies": {}
