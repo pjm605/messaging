@@ -4,13 +4,24 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Message</h2>
                 <hr>
-                <h3 class="section-subheading text-muted"> This message is sent to {{ to }}</h3>
+                <h4> This message is sent to </h4>
+            </div>
+            <div class="col-lg-12 text-center">
+                <div ng-if="phone"> 
+                    <i class="fa fa-phone fa-2x sr-contact"></i>
+                    <p>{{ phone }}</p>
+                </div>
+                <div ng-if="email">
+                    <i class="fa fa-envelope-o fa-2x sr-contact"></i>
+                    <p>{{ email }}</p>
+                </div>
+        
             </div>
         </div>
 
        	<div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-subheading text-muted">  {{ message}}</h3>
+            <div class="col-lg-12 text-center" >
+                <h4 class="message-area">  {{ message }} </h4>
             </div>
         </div>
 
