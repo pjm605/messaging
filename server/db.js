@@ -2,7 +2,7 @@
 
 var Sequelize = require('sequelize');
 
-var databaseURI = 'postgres://localhost:5432/winit';
+var databaseURI = 'postgres://localhost:5432/hobby-dev';
 
 var db = new Sequelize(databaseURI, {
   define: {

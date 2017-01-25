@@ -1,7 +1,7 @@
-This is a node.js based web application, that allows users to send a message to a someone through email or text.
+This is a node.js based web application, that allows users to send a message to a someone through email and/or text message.
 It creates a http link to the actual message that gets sent to the recipient. 
 
-It validates the email/phone number field to decide if the message should be sent via email or text.
+It checks and validates the email and phone number fields to decide if the message should be sent via email or text.
 Text sending is through the twilio api.
 Email sending is through the mailgun api.
 
