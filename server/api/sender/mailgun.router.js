@@ -16,9 +16,14 @@ var mailgun = new Mailgun({ apiKey : mailgun_api_key, domain: mailgun_domain });
 router.get('/:to/:id', function (req, res) {
 	// build the http link to the message display page
 	// get the name of the machine where the server is running
-	var serverName = process.env.HEROKU_APPNAME || dnssync.lookup(os.hostname());
-	var port = process.env.PORT || 8080;
-	var link = "http://"+serverName+":"+port+"/#!/display/"+req.params.id;
+	if(process.env.HEROKU_APPNAME) {
+		var link = "http://"+process.env.HEROKU_APPNAME+".herokuapp.com/#!/display/"+req.params.id;
+	}
+	else {
+		var serverName = dnssync.lookup(os.hostname());
+		var port = process.env.PORT || 8080;
+		var link = "http://"+serverName+":"+port+"/#!/display/"+req.params.id;
+	}
 
 	var data = {
 		from: mailgun_from_email,
