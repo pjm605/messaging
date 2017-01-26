@@ -16,12 +16,12 @@ var client = twilio(twilio_sid, twilio_auth_token);
 
 router.get('/:num/:id', function (req, res) {
 
-	var serverName = dnssync.lookup(os.hostname())
+	var serverName = process.env.HEROKU_APPNAME || dnssync.lookup(os.hostname());
 	console.log("sn:"+serverName);
 
 	//http://localhost:8080/#!/display/1
-
-	var link = "http://"+serverName+":8080/#!/display/"+req.params.id;
+	var port = process.env.PORT || 8080;
+	var link = "http://"+serverName+":"+port+"/#!/display/"+req.params.id;
 	
 	console.log("sendTwilioMessage to:", req.params.num, " msg:", req.params.id, " hostname:"+serverName)
 	var resp = client.messages.create({
